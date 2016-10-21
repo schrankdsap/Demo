@@ -1,0 +1,37 @@
+_schema-version: '2.0'
+ID: demo
+version: 0.0.1
+
+modules:
+ - name: db
+   type: hdb
+   path: db
+   requires:
+    - name: hdi-container
+
+ - name: js
+   type: nodejs
+   path: js/
+   requires:
+     - name: db
+     - name: hdi-container
+   provides:
+   - name: jsapi
+     properties:
+       url: ${default-url}
+
+ - name: ui
+   type: html5
+   path: ui
+   requires:
+     - name: jsapi
+       group: destinations
+       properties:
+         name: js_be
+         url: ~{url}
+
+resources:
+ - name: hdi-container
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
