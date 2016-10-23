@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="demo.db.models::TEST" applyPrivilegeType="NONE" defaultClient="$$client$$" visibility="internal" calculationScenarioType="TREE_BASED" dataCategory="DIMENSION" dimensionType="STANDARD" enforceSqlExecution="false" outputViewType="Projection">
+<descriptions defaultDescription="TEST"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="demo.db.data::table_test.country">
+    <resourceUri>demo.db.data::table_test.country</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="continent_name">
+        <descriptions defaultDescription="continent_name"/>
+      </viewAttribute>
+      <viewAttribute id="country_id">
+        <descriptions defaultDescription="country_id"/>
+      </viewAttribute>
+      <viewAttribute id="country_name">
+        <descriptions defaultDescription="country_name"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="demo.db.data::table_test.country">
+      <mapping xsi:type="Calculation:AttributeMapping" target="continent_name" source="continent_name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="country_id" source="country_id"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="country_name" source="country_name"/>
+    </input>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="continent_name" order="1" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="continent_name"/>
+      <keyMapping columnObjectName="Projection_1" columnName="continent_name"/>
+    </attribute>
+    <attribute id="country_id" order="2" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="country_id"/>
+      <keyMapping columnObjectName="Projection_1" columnName="country_id"/>
+    </attribute>
+    <attribute id="country_name" order="3" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="country_name"/>
+      <keyMapping columnObjectName="Projection_1" columnName="country_name"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="59" y="233"/>
+      <rectangleSize height="30" width="140"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

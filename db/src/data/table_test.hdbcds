@@ -1,0 +1,9 @@
+namespace demo.db.data;
+context table_test {
+
+ entity country{
+   key country_id: Integer;
+   country_name: String(100);
+   continent_name: String(100);
+ };
+};

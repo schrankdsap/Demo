@@ -1,0 +1,8 @@
+{
+	"welcomeFile": "index.html",
+	"authenticationMethod": "none",
+	"routes": [{
+		"source": "^/country.xsodata/.*$",
+		"destination": "js_be"
+	}]
+}

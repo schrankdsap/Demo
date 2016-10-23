@@ -1,0 +1,3 @@
+service{
+  "demo.db.models::TEST" as "country" key generate local "ID";
+}

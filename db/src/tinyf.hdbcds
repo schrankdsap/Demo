@@ -1,0 +1,7 @@
+namespace demo.db;
+context tinyf {
+ entity world {
+ key continent: String(100);
+ };
+ 
+};
